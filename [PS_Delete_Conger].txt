@@ -1,0 +1,15 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Delete_Conger]    Script Date: 06/06/2013 15:31:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Delete_Conger]
+@IdConger			int			
+AS
+BEGIN
+DELETE  FROM Conger
+WHERE IdConger =@IdConger
+END	
+

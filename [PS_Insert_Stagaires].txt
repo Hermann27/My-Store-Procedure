@@ -1,0 +1,54 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Insert_Stagaires]    Script Date: 06/06/2013 15:39:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Insert_Stagaires]
+@Id	int	,							
+@NomStagaire	varchar(50)	,			
+@PrenomStagaire	varchar(50),			
+@FonctionStagaire varchar(50),		
+@Date_Debut_Stage	datetime,	
+@Date_Fin_Stage	datetime		,
+@MatriculeStagaire	varchar(50)	,	
+@EtablicementStagaire	varchar(50)	,
+@IdDepart	int	,
+@IdEntreprise	int			,		
+@photo	varchar(50)	,				
+@Email	varchar(50),
+@Sex varchar(10),
+@TypeStage varchar(50)	
+AS
+BEGIN
+INSERT INTO Stagaires(Id,
+					  NomStagaire,
+					  PrenomStagaire,
+					  FonctionStagaire,
+					  Date_Debut_Stage,
+					  Date_Fin_Stage,
+					  MatriculeStagaire,
+					  EtablicementStagaire,
+					  IdDepart,
+					  IdEntreprise,
+					  photo,
+					  Email,
+					  Sex,
+					  TypeStage
+                    )values(@Id,
+							@NomStagaire,
+							@PrenomStagaire,
+							@FonctionStagaire,
+							@Date_Debut_Stage,
+							@Date_Fin_Stage,
+							@MatriculeStagaire,
+							@EtablicementStagaire,
+							@IdDepart,
+							@IdEntreprise,
+							@photo,
+							@Email,
+				     		@Sex,
+						    @TypeStage
+						   )
+END

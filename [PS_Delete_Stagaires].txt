@@ -1,0 +1,14 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Delete_Stagaires]    Script Date: 06/06/2013 15:35:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Delete_Stagaires]
+@Id int
+AS
+BEGIN
+DELETE FROM Stagaires 
+Where Id=@Id
+END

@@ -1,0 +1,20 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Select_Conger]    Script Date: 06/06/2013 15:40:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Select_Conger]
+@IdConger			int,			
+@Matricule			varchar(50)	,
+@Typeconger 		varchar(10),	
+@montant			money	
+AS
+BEGIN
+SELECT * FROM Conger
+WHERE IdConger Like '%'+@IdConger+'%'
+AND Matricule Like '%' +@Matricule +'%'
+AND Typeconger Like '%' +@Typeconger +'%'
+AND montant Like '%' +@montant +'%'
+END	

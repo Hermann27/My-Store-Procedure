@@ -1,0 +1,46 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Update_Entreprises]    Script Date: 06/06/2013 15:45:02 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Update_Entreprises]
+@IdEntreprise	int	,				
+@RaisonSociale	varchar(50)	,		
+@Adresse	varchar(50),					
+@Code_Postal	varchar(50)	,			
+@Ville	varchar(50)	,				
+@Telephone	int	,					
+@Email	varchar(50)	,				
+@Site_Internet	varchar(50)	,		
+@Forme_Juridique	varchar(50)	,		
+@Capitale	varchar(50),
+@NomEntreprises varchar(50),
+@oldEntreprise int				
+AS
+BEGIN
+UPDATE  Entreprises SET  IdEntreprise=@IdEntreprise,	
+						RaisonSociale=@RaisonSociale,	
+						      Adresse=@Adresse,		
+						  Code_Postal=@Code_Postal,	
+						        Ville=@Ville,			
+						    Telephone=@Telephone,		
+						        Email=@Email,			
+						Site_Internet=@Site_Internet,	
+					  Forme_Juridique=@Forme_Juridique,
+						     Capitale=@Capitale,
+							NomEntreprises=@NomEntreprises
+WHERE IdEntreprise=@oldEntreprise
+						        
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+END		

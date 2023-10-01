@@ -1,0 +1,35 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Select_Entreprises]    Script Date: 06/06/2013 15:42:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Select_Entreprises]
+@IdEntreprise	varchar(50)	,				
+@RaisonSociale	varchar(50)	,		
+@Adresse	varchar(50),					
+@Code_Postal	varchar(50)	,			
+@Ville	varchar(50)	,				
+@Telephone	varchar(50)	,					
+@Email	varchar(50)	,				
+@Site_Internet	varchar(50)	,		
+@Forme_Juridique	varchar(50)	,		
+@Capitale	varchar(50)	,
+@NomEntreprises varchar(50)			
+AS
+BEGIN
+SELECT * FROM Entreprises
+WHERE IdEntreprise Like '%'+@IdEntreprise+'%'
+AND RaisonSociale Like '%'+@RaisonSociale+'%'
+AND Adresse Like '%'+@Adresse+'%'
+AND Code_Postal Like '%'+@Code_Postal+'%'
+AND Ville Like '%'+@Ville+'%'
+AND Telephone Like '%'+@Telephone+'%'
+AND Email Like '%'+@Email+'%'
+AND Site_Internet Like '%'+@Site_Internet+'%'
+AND Forme_Juridique Like '%'+@Forme_Juridique+'%'	
+AND Capitale Like '%'+@Capitale+'%'	
+AND NomEntreprises Like '%'+@NomEntreprises+'%'	
+				
+END		

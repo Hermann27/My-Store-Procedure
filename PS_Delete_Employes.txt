@@ -1,0 +1,14 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Delete_Employes]    Script Date: 06/06/2013 15:33:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Delete_Employes]
+@Matricule	varchar(50)
+ AS
+BEGIN
+DELETE FROM Employes
+WHERE Matricule =@Matricule
+END

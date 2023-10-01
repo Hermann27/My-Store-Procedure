@@ -1,0 +1,18 @@
+
+CREATE TABLE [dbo].[Stagaires](
+	[Id] [int] NOT NULL,
+	[NomStagaire] [varchar](50) NOT NULL,
+	[PrenomStagaire] [varchar](50) NOT NULL,
+	[FonctionStagaire] [varchar](50) NOT NULL,
+	[Date_Debut_Stage] [datetime] NOT NULL,
+	[Date_Fin_Stage] [datetime] NOT NULL,
+	[MatriculeStagaire] [varchar](50) NOT NULL,
+	[EtablicementStagaire] [varchar](50) NOT NULL,
+	[IdDepart] [int] NOT NULL,
+	[IdEntreprise] [int] NOT NULL,
+	[photo] [varchar](50) NOT NULL,
+	[Email] [varchar](50) NOT NULL,
+	[Sex] [varchar](50) NOT NULL,
+	[TypeStage] [varchar](50) NOT NULL,
+)
+

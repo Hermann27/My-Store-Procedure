@@ -1,0 +1,29 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Insert_CongerEmployes]    Script Date: 06/06/2013 15:37:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Insert_CongerEmployes]
+@Date_Debut			datetime,			
+@Date_Fin			datetime,			
+@IdConger			int,						
+@MatriculeEmpl		varchar(50)	,
+@Duree				varchar(25)	
+AS
+BEGIN
+INSERT INTO Congers_Employes(Date_Debut,		
+							 Date_Fin,		
+							 IdConger,		
+							 MatriculeEmpl,
+							 Duree
+							)values( @Date_Debut,		
+									 @Date_Fin	,	
+									 @IdConger,		
+									 @MatriculeEmpl,
+									 @Duree
+)
+
+
+END	

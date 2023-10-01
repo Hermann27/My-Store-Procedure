@@ -1,0 +1,35 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Insert_User]    Script Date: 06/06/2013 15:40:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Insert_User]
+@Iduser				int	,							
+@NomUser			varchar(50)	,					
+@MotPass		    varchar(50),					
+@confirmer			varchar(50),					
+@Privilege			varchar(50),					
+@IdEntreprise		int	,
+@Compte     varchar(50)					
+AS
+BEGIN
+Insert Into Utilisateurs(Iduser	,	
+						 NomUser,		
+						 MotPass,		
+						 confirmer,	
+						 Privilege,	
+						 IdEntreprise,
+                         Dates,
+						 Compte
+						)values( @Iduser,		
+								 @NomUser,	
+								 @MotPass,	
+								 @confirmer,	
+								 @Privilege,	
+								 @IdEntreprise,
+								getdate(),
+								@Compte
+)
+END	

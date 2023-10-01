@@ -1,0 +1,15 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_AUTHENTIFICATION]    Script Date: 06/06/2013 15:30:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_AUTHENTIFICATION]
+@nomUser varchar(50),
+@motpass  varchar(50)
+AS
+BEGIN
+SELECT NomUser ,MotPass FROM Utilisateurs
+WHERE  NomUser=@nomUser and MotPass=@motpass 
+END

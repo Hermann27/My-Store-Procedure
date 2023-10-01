@@ -1,0 +1,45 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Insert_Entreprises]    Script Date: 06/06/2013 15:39:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Insert_Entreprises]
+@IdEntreprise	int	,				
+@RaisonSociale	varchar(50)	,		
+@Adresse	varchar(50),					
+@Code_Postal	varchar(50)	,			
+@Ville	varchar(50)	,				
+@Telephone	int	,					
+@Email	varchar(50)	,				
+@Site_Internet	varchar(50)	,		
+@Forme_Juridique	varchar(50)	,		
+@Capitale	varchar(50)	,
+@NomEntreprises	varchar(50)		
+AS
+BEGIN
+INSERT INTO Entreprises(IdEntreprise,
+						RaisonSociale,
+						Adresse,
+						Code_Postal,
+						Ville,
+						Telephone,
+						Email,
+						Site_Internet,
+						Forme_Juridique,
+						Capitale,
+						NomEntreprises
+						)values(@IdEntreprise,	
+								@RaisonSociale,	
+								@Adresse,		
+								@Code_Postal,	
+								@Ville,			
+								@Telephone,		
+								@Email,			
+								@Site_Internet,	
+								@Forme_Juridique,
+								@Capitale,
+								@NomEntreprises
+								)
+END		

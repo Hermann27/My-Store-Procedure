@@ -1,0 +1,19 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Update_Depart]    Script Date: 06/06/2013 15:44:17 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Update_Depart]
+@IdDep		   int,
+@NomDepartement	varchar(50)	,
+@NomManager		varchar(50)	,
+@olIdDep int
+AS
+BEGIN
+UPDATE Departements SET IdDep=@IdDep,			          
+						 NomDepartement=@NomDepartement	,
+						 NomManager	=@NomManager
+WHERE IdDep=@olIdDep 								
+END	

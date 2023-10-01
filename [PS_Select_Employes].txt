@@ -1,0 +1,48 @@
+CREATE PROCEDURE PS_Select_Employes 
+@Matricule	varchar(50),
+@Nom	varchar(50)	,
+@Prenom	varchar(50)	,
+@localisation	varchar(50)	,
+@Date_Naiss	varchar(50)	,
+@Date_Entree	varchar(50)	,
+@Salaire_Mensuel	varchar(50)	,
+@Adresse	varchar(50)	,
+@IdDepartement	varchar(50)	,
+@Poste	varchar(50)	,
+@photo	varchar(50)	,
+@IdEntreprise	varchar(50)	,
+@sex	varchar(50)	,
+@nationalite	varchar(50)	,
+@Sit_Familial	varchar(50)	,
+@BP	varchar(50)	,
+@PermisConduire	varchar(50)	,
+@commentaire	varchar(50),
+@Email varchar(50),
+@Diplome varchar(50) ,
+@DEF varchar(50)
+ AS
+BEGIN
+SELECT * FROM Employes
+WHERE Matricule like'%'+@Matricule+'%'
+AND Nom Like '%' +@Nom +'%'
+AND Prenom Like '%' +@Prenom +'%'
+AND Diplome Like '%' +@Diplome +'%'
+AND DEF Like '%' +@DEF +'%'
+AND localisation Like '%' +@localisation +'%'
+AND Date_Naiss Like '%' +@Date_Naiss +'%'
+AND Date_Entree Like '%' +@Date_Entree +'%'
+AND Salaire_Mensuel Like '%' +@Salaire_Mensuel +'%'
+AND Adresse Like '%' +@Adresse +'%'
+AND IdDepartement Like '%' +@IdDepartement +'%'	
+AND Poste LIKE '%'+@Poste+'%'
+AND photo LIKE '%'+@photo+'%'
+AND IdEntreprise LIKE '%'+@IdEntreprise+'%'
+AND sex Like '%' +@sex +'%'	
+AND nationalite Like '%' +@nationalite +'%'	
+AND Sit_Familial Like '%' +@Sit_Familial +'%'	
+AND BP Like '%' +@BP +'%'	
+AND PermisConduire Like '%' +@PermisConduire +'%'	
+AND commentaire Like '%' +@commentaire +'%'
+AND Email Like '%' +@Email +'%'
+
+END

@@ -1,0 +1,28 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Selete_User]    Script Date: 06/06/2013 15:42:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Selete_User]
+@Iduser				varchar(50)	,							
+@NomUser			varchar(50)	,					
+@MotPass		    varchar(50),					
+@confirmer			varchar(50),					
+@Privilege			varchar(50),					
+@IdEntreprise		varchar(50)	,
+--@Dates 				varchar(50),
+@Compte				 varchar(50)
+AS
+BEGIN
+Select * FROM Utilisateurs 
+WHERE Iduser Like '%'+@Iduser+'%'
+AND NomUser Like '%' +@NomUser +'%'
+AND MotPass Like '%' +@MotPass +'%'
+AND confirmer Like '%' +@confirmer +'%'
+AND Privilege Like '%' +@Privilege +'%'
+--AND Dates Like '%' +@Dates +'%'
+AND Compte	 Like '%' +@Compte	 +'%'
+AND IdEntreprise Like '%' +@IdEntreprise +'%'
+END	

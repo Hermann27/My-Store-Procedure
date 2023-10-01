@@ -1,0 +1,18 @@
+USE [Gestion_Du_Personnel]
+GO
+/****** Object:  StoredProcedure [dbo].[PS_Select_Depart]    Script Date: 06/06/2013 15:41:24 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[PS_Select_Depart]
+@IdDep		   varchar(50),
+@NomDepartement	varchar(50)	,
+@NomManager		varchar(50)	
+AS
+BEGIN
+SELECT * FROM Departements
+WHERE IdDep Like '%'+@IdDep+'%'
+AND @NomDepartement Like '%' +@NomDepartement +'%'
+AND @NomManager Like '%' +@NomManager +'%'							
+END	
